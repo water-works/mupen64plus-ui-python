@@ -4,3 +4,4 @@ src/m64py.egg-info/
 
 # Files
 dist/*.egg
+*.swp
