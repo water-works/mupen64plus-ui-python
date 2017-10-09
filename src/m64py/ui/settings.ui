@@ -882,6 +882,11 @@ QGroupBox::title {
        </item>
       </layout>
      </widget>
+ <widget class="QWidget" name="tab_5">
+  <attribute name="title">
+   <string>Netplay</string>
+  </attribute>
+ </widget>
     </widget>
    </item>
   </layout>

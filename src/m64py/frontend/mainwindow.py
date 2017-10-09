@@ -300,6 +300,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionPaths.setEnabled(not action)
         self.actionEmulator.setEnabled(not action)
         self.actionGraphics.setEnabled(not action)
+        self.actionNetplay.setEnabled(not action)
         self.actionPlugins.setEnabled(not action)
 
     def on_rom_opened(self):
@@ -457,6 +458,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def on_actionGraphics_triggered(self):
         """Shows emulator settings."""
         self.settings.show_page(2)
+
+    @pyqtSlot()
+    def on_actionNetplay_triggered(self):
+        """Show netplay settings."""
+        # does nothing for now
+        print('netplay action triggered')
+        self.settings.show_page(4)
 
     @pyqtSlot()
     def on_actionPlugins_triggered(self):

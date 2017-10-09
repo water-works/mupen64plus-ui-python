@@ -96,6 +96,7 @@
     <addaction name="actionEmulator"/>
     <addaction name="actionGraphics"/>
     <addaction name="actionPlugins"/>
+    <addaction name="actionNetplay"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="layoutDirection">
@@ -218,6 +219,15 @@ QStatusBar { margin:0px; }</string>
    </property>
    <property name="text">
     <string>Emulator</string>
+   </property>
+  </action>
+  <action name="actionNetplay">
+   <property name="icon">
+    <iconset resource="icons.qrc">
+     <normaloff>:/icons/action_plugins.png</normaloff>:/icons/action_plugins.png</iconset>
+   </property>
+   <property name="text">
+    <string>Netplay</string>
    </property>
   </action>
   <action name="actionPlugins">
