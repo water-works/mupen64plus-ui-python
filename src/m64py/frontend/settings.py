@@ -279,8 +279,8 @@ class Settings(QDialog, Ui_Settings):
         else:
             self.checkDelaySI.setChecked(False)
             self.checkDelaySI.setEnabled(False)
-        self.checkDelaySI.setToolTip(
-            self.core.config.get_parameter_help("DelaySI").decode())
+        #self.checkDelaySI.setToolTip(
+        #    self.core.config.get_parameter_help("DelaySI").decode())
 
         count_per_op = self.core.config.get_parameter("CountPerOp")
         if count_per_op is not None:
