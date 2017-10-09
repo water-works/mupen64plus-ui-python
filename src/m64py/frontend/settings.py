@@ -115,6 +115,8 @@ class Settings(QDialog, Ui_Settings):
             (self.pathData, self.groupData, True)))
         self.browseROM.clicked.connect(lambda: self.browse_dialog(
             (self.pathROM, self.groupROM, True)))
+        self.browseNetplay.clicked.connect(lambda: self.browse_dialog(
+            (self.pathNetplay, self.groupNetplay, True)))
         self.checkEnableVidExt.clicked.connect(self.on_vidext_changed)
         for plugin_type in self.combomap:
             self.connect_combo_signals(self.combomap[plugin_type])
@@ -213,6 +215,8 @@ class Settings(QDialog, Ui_Settings):
         path_data = self.qset.value(
             "Paths/Data", self.core.config.get_path("SharedData"))
         path_roms = self.qset.value("Paths/ROM")
+        # set netplay path when this menu is created
+        path_netplay = self.qset.value("Paths/Netplay")
 
         try:
             path_plugins = self.qset.value("Paths/Plugins", os.path.realpath(
@@ -228,6 +232,7 @@ class Settings(QDialog, Ui_Settings):
         self.pathLibrary.setText(path_library)
         self.pathPlugins.setText(path_plugins)
         self.pathData.setText(path_data)
+        self.pathNetplay.setText(path_netplay)
 
     def set_video(self):
         self.core.config.open_section("Video-General")
@@ -334,6 +339,7 @@ class Settings(QDialog, Ui_Settings):
         self.qset.setValue("Paths/Plugins", self.pathPlugins.text())
         self.qset.setValue("Paths/Data", self.pathData.text())
         self.qset.setValue("Paths/ROM", self.pathROM.text())
+        self.qset.setValue("Paths/Netplay", self.pathNetplay.text())
 
     def save_video(self):
         self.core.config.open_section("Video-General")
